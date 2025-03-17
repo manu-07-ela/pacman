@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-port-fowarding
+  namespace: test1
+spec:
+  selector:
+    app: busybox-v1.0
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 100
+  type: ClusterIP
